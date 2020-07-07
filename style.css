@@ -1,0 +1,653 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    color: #fff;
+    background: rgb(0, 51, 51);
+}
+
+.appContainer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 102, 102);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainAppContainer{
+    width: 80%;
+    height: 80%;
+    background: rgb(0, 102, 102);
+    box-shadow: 8px 8px 10px rgba(0,0,0,0.5),
+                -4px -4px 4px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userChats{
+
+    width: 30%;
+    height: 100%;
+    background: rgb(0, 102, 102);
+    display: none;
+    flex-direction: column;
+}
+.userChatsNav{
+    width: 100%;
+    height: 15%;
+    background: paleturquoise;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.logoAndSearch{
+    width: 100%;
+    height: 50%;
+    background: transparent;
+    display: flex;
+}
+.logo{
+    width: 50%;
+    height: 100%;
+    color: rgb(119, 160, 160);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search{
+    width: 50%;
+    height: 100%;
+    color: rgb(119, 160, 160);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.search a{
+    text-decoration: none;
+    color: rgb(119, 160, 160);
+    font-size: 20px;
+    border-bottom: none;
+}
+
+.navDotted{
+    width: 10%;
+    height: 80%;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 20px;
+}
+.navDotted span{
+    width: 4px;
+    height: 4px;
+    background: rgb(119, 160, 160);
+}
+
+.navLinks {
+    width: 90%;
+    height: 50%;
+    background: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.linksWrapper{
+    width: 100%;
+    height: 100%;
+    background: paleturquoise;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.linksWrapper ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.linksWrapper ul li{
+    display: inline-flex;
+    margin: 10px;
+
+}
+.linksWrapper ul li a{
+    text-decoration: none;
+    color: #000;
+    padding: 10px;
+    
+}
+.linksWrapper ul li .active, a:hover{
+    border-bottom: 2px solid rgb(3, 104, 87);
+}
+
+.allChats{
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 51, 51);
+    display: flex;
+    
+    flex-direction: column;
+}
+.chatContainers{
+    width: 100%;
+    height: 10%;
+    background: transparent;
+    border-bottom: 1px solid #aaa;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: all 300ms ease-in-out;
+    visibility: hidden;
+}
+.activeChat{
+    visibility: visible;
+}
+.chatContainers:hover{
+    background: rgb(0, 26, 26);
+}
+.profilePic{
+    width: 10%;
+    height: 80%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* .picContainer{
+    width: 100%;
+    height: 100%;
+    background: rgb(207, 184, 184);
+    border-radius: 50%;
+} */
+.profilePic img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.receivedMessage{
+    width: 80%;
+    height: 100%;
+    /* background: rgb(102, 109, 109); */
+    background: transparent;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.username{
+    width: 100%;
+    height: 40%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+}
+.usernameText{
+    width: 80%;
+    height: 100%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+}
+.time{
+    width: 20%;
+    height: 90%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.actualMessage{
+    width: 100%;
+    height: 50%;
+    background: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.messageText{
+    width: 90%;
+    height: 100%;
+    background: transparent;
+    display: flex;
+    align-items: center;
+}
+.numOfMessages{
+    width: 10%;
+    height: 90%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.numOfMessages span{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgb(0, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+}
+
+.messageField{
+
+    width: 100%;
+    height: 100%;
+    background: rgb(217, 255, 255);
+    display: none;
+    flex-direction: column;
+}
+.navContainer2{
+    width: 100%;
+    height: 10%;
+    background: rgb(0, 51, 51);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.picAndUserWrapper{
+    width: 95%;
+    height: 80%;
+    background: transparent;
+    display: flex;
+
+}
+.pictureAndUsername{
+    width: 40%;
+    height: 95%;
+    background: transparent;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+.dp{
+    width: 20%;
+    height: 90%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dp img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.usrname{
+    width: 50%;
+    height: 90%;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.usrname ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.usrname ul li{
+    display: inline-flex;
+    padding: 2px;
+}
+
+.callAndOther{
+    width: 60%;
+    height: 95%;
+    background: transparent;
+    display: flex;
+    justify-content: flex-end;
+}
+.messageNavContainer{
+    width: 70%;
+    height: 100%;
+    background: transparent;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.messageNavContainer span i{
+
+    font-size: 20px;
+}
+.messageNavContainer span #backToHome{
+    color: #fff;
+    text-decoration: none;
+    border-bottom: none;
+}
+
+.writtenMessages{
+    width: 100%;
+    height: 75%;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.terms{
+    width: 100%;
+    height: 8%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.terms a{
+    text-decoration: none;
+    color: rgb(141, 206, 196);
+}
+.terms a:hover{
+    border: none;
+}
+.messageBoxContainer{
+    width: 96%;
+    height: 100%;
+    background: transparent;
+    overflow: auto;
+}
+.messageBoxContainer::-webkit-scrollbar{
+    width: 2px;
+}
+.messageBoxContainer::-webkit-scrollbar-track{
+    background: transparent;
+    border: none;
+}
+.messageBoxContainer::-webkit-scrollbar-thumb{
+    background: rgb(158, 158, 158);
+}
+
+.messageBoxContainer ul {
+
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+.messageBoxContainer ul li{
+
+	display:inline-block;
+	clear:both;
+	color:#fff;
+	padding:20px;
+    margin-bottom:2px;
+    margin-right: 8px;
+	border-radius: 30px;
+	max-width: 500px; /* Adds a max width for the characters */
+	word-wrap: break-word; /* If the characters inside the list exceeds 500px width, the word breaks*/
+}
+.messageBoxContainer ul li.them{
+	
+	background:rgb(70, 92, 89);
+	float:left;
+}
+.messageBoxContainer ul li.me{
+	
+	float:right;
+	background:rgb(0, 102, 102);
+}
+.them + .me{
+	
+	border-top-right-radius:5px;
+}
+.me + .me{
+	
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+}
+.me:last-of-type{
+	
+	border-bottom-right-radius:30px;
+}
+
+.typingCenter{
+    width: 100%;
+    height: 15%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.textBox{
+    width: 80%;
+    height: 60%;
+    background: transparent;
+    box-sizing: border-box;
+}
+.textBox form{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+.textBox form textarea{
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 51, 51);
+    resize: none;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 999px;
+    color: #fff;
+    outline: none;
+}
+.textBox form textarea::-webkit-scrollbar{
+    width: 2px;
+}
+.textBox form textarea::-webkit-scrollbar-track{
+    background: transparent;
+    border: none;
+}
+.textBox form textarea::-webkit-scrollbar-thumb{
+    background: rgb(158, 158, 158);
+}
+
+.sendMessage{
+    width: 16%;
+    height: 60%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sendMessage button{
+    width: 100px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 999px;
+    border: none;
+    background: rgb(0, 51, 51);
+    outline: none;
+}
+.sendMessage button i{
+    font-size: 22px;
+    color: #fff;
+}
+
+
+
+.menuContainer{
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 102, 102);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuContent{
+    width: 85%;
+    height: 90%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.menuContent ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menuContent ul li{
+    display: block;
+    margin-top: 20px;
+}
+.menuContent ul li a{
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    font-size: 30px;
+    border-bottom: none;
+}
+.menuContent ul li a:hover{
+    background: rgb(0, 17, 17);
+    color: #fff;
+}
+
+
+
+.usernameContainer{
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 102, 102);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.usernameContent{
+    width: 85%;
+    height: 90%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.usernameContent input{
+    width: 300px;
+    height: 40px;
+    background: rgba(0,0,0,0.3);
+    outline: none;
+    border: 2px solid rgb(0, 26, 26);
+    border-radius: 999px;
+    padding: 10px;
+    font-size: 20px;
+    color: #fff;
+}
+.usernameContent input#submitButton{
+    width: 148px;
+    background: rgb(0, 26, 26);
+    padding: 0px;
+}
+
+
+
+.aboutContainer{
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 26, 26);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutContent{
+    width: 85%;
+    height: 90%;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.aboutContent a{
+    text-decoration: none;
+    color: rgb(0, 102, 102);
+    font-size: 24px;
+    padding: 8px;
+}
+
+
+
+.contactContainer{
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 26, 26);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.contactContent{
+    width: 85%;
+    height: 90%;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.contactContent a{
+    text-decoration: none;
+    color: rgb(0, 102, 102);
+    font-size: 24px;
+    padding: 8px;
+}
+
+
+
+
+.profileContainer{
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 26, 26);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.profileContent{
+    width: 85%;
+    height: 90%;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.profileContent a{
+    text-decoration: none;
+    color: rgb(0, 102, 102);
+    font-size: 24px;
+    padding: 8px;
+}
+
+
+
+
+
+
+
